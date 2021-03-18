@@ -43,7 +43,7 @@
 
 .page-body {
   min-width: 1200px;
-  margin: 0;
+  margin: 0 40px;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 21px;
@@ -78,29 +78,42 @@ img {
 .main-header{
   outline: 5px solid rgba(0, 255, 0, 0.3);
   outline-offset: -5px;
+  padding: 0px 72px;
+  margin: 0px;
 }
 
 .main-navigation {
-  /*display: grid;*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*display: grid;*/
 }
+
 .site-navigation{
-  display: flex;
-  justify-content: space-between;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+width: 100%;
+margin: 0px;
+padding: 0px;
+list-style: none;
+outline: 5px solid rgba(146, 9, 112, 0.3);
+outline-offset: -5px;
 }
 
 .site-navigation li{
   padding: 15px 0px;
 }
-
+.site-navigation li:nth-child(-n+2){
+  justify-self: start;
+}
+.site-navigation li:nth-child(n+3){
+  justify-self: end;
+}
 
 .main-logo{
+  margin-top: -56px;
   width: 138px;
   height: 70px;
   outline: 5px solid rgba(217, 255, 0, 0.3);
   outline-offset: -5px;
+  justify-self: center;
 }
 .main-header-bar {
   background-color: var(--basic-light);
@@ -114,15 +127,6 @@ img {
   padding: 0 10px;
 
 }*/
-
-.site-navigation{
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  outline: 5px solid rgba(146, 9, 112, 0.3);
-  outline-offset: -5px;
-}
 
 .site-navigation a{
   text-decoration: none;
@@ -147,21 +151,20 @@ img {
   font-weight: bold;
 }
 
-.main-logo {
-  justify-self: center;
-}
-
 /* Container */
 
 .container {
   width: 1200px;
-  margin: 0 auto;
+  margin: 0px;
   padding: 0 1px;
   text-align: center;
+  justify-self: center;
 }
 
 /*Index page*/
 .greeting {
+  width: 1200px;
+  height: 509px;
   background: url(../img/background_photo.jpg) no-repeat center top;
 }
 
@@ -483,11 +486,16 @@ color: var(--main-text);
   text-align: center;
   outline: 5px solid rgba(174, 0, 255, 0.562);
   outline-offset: -5px;
+
 }
 
 .social-list{
+  display: flex;
+  justify-self: center;
+  text-align: center;
   list-style: none;
   color: var(--main-text);
+
 }
 .social-button {
   display: flex;
